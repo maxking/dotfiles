@@ -1,0 +1,33 @@
+alias reload!='. ~/.zshrc'
+alias l="ls -GlAh --color"
+alias ls="ls --color=auto -Fh --group-directories-first"
+alias latest="ls -lct1"
+alias clls="clear;ls -Glah --color"
+alias pingg='ping -c 4 Google'
+alias grep='grep --colour=auto'
+alias diff='colordiff'
+alias cd..='cd ..'
+alias .='pwd'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias sl=ls
+alias copy='rsync -aP'
+alias halt='sudo shutdown -h now'
+alias reboot='sudo reboot'
+alias dt='dmesg | tail'
+alias dh='df -h'
+alias dm='df -m'
+alias x='startx'
+alias wv='sudo wvdial'
+alias bc='bc -l'
+alias update='sudo apt-get update'
+alias search='apt-cache search'
+alias install='sudo apt-get install --yes'
+alias upgrade='sudo apt-get upgrade --yes'
+alias ae='sudo $EDITOR /etc/apt/sources.list'
+alias aL='dpkg -L'
+alias em='emacsclient -c'
+alias sem='sudo emacs -nw'
+alias cb='curl -F "clbin=<-" https://clbin'
+alias ss='sshuttle -r ec2 0/0 --dns -x 10.0.0.0/32 -D'
+alias extract='dtrx'

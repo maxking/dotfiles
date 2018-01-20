@@ -1,0 +1,49 @@
+source /home/maxking/.dotfiles/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle pip
+antigen bundle command-not-found
+
+# Syntax highlighting bundle.
+# antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme steeef
+
+# Tell antigen that you're done.
+antigen apply
+
+export PATH=$PATH:"/home/maxking/.local/bin"
+source $(which virtualenvwrapper.sh)
+
+chpwd_auto_ls () {
+    ls --color=if-tty --group-directories-first -hF
+}
+
+add-zsh-hook chpwd chpwd_auto_ls
+eval "$(thefuck --alias)"
+
+export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libglibmm-2.4.so.1/:$LD_LIBRARY_PATH
+
+# Source the aliases from the dotfiles repo.
+source ~/.dotfiles/zsh-extra/*.zsh
+
+export GOPATH=~/.gopath/
+export PATH=$PATH:~/.gopath/bin/
+
+dcleanup(){
+	# Cleanup the containers that have exit.
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+	# Cleanup the images that are dangling i.e. not being used by any container.
+	docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+
+export EDITOR=emacs
+
+export PATH=$PATH:/home/maxking/.local/bin
+
+source '/home/maxking/.local/azure-cli/az.completion'
