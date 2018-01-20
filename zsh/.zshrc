@@ -18,14 +18,12 @@ antigen theme steeef
 antigen apply
 
 export PATH=$PATH:"/home/maxking/.local/bin"
-source $(which virtualenvwrapper.sh)
 
 chpwd_auto_ls () {
     ls --color=if-tty --group-directories-first -hF
 }
 
 add-zsh-hook chpwd chpwd_auto_ls
-eval "$(thefuck --alias)"
 
 export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libglibmm-2.4.so.1/:$LD_LIBRARY_PATH
 
@@ -46,4 +44,3 @@ export EDITOR=emacs
 
 export PATH=$PATH:/home/maxking/.local/bin
 
-source '/home/maxking/.local/azure-cli/az.completion'
