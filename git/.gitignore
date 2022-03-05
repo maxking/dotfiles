@@ -1,0 +1,81 @@
+## Python Stuff
+
+.DS_Store
+*~
+*.swp
+*.pyc
+*.pyo
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+## Emacs Stuff
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+.eunit
+deps
+*.o
+*.beam
+*.plt
+erl_crash.dump
+## Erlang Stuff
+
+#databases
+*.sqlite3
+emacs.d.symlink/smex-items
+
+
+# emacs backups.
+\#*
+*\#*

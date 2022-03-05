@@ -1,0 +1,76 @@
+# Sample gitconfig
+#
+
+[hub]
+        protocol = https
+[user]
+        name = Abhilash Raj
+        email = raj.abhilash1@gmail.com
+[commit]
+        gpgsign = true
+[alias]
+        co = checkout
+        promote = !$ZSH/bin/git-promote
+        wtf     = !$ZSH/bin/git-wtf
+        rank-contributors = !$ZSH/bin/git-rank-contributors
+        count   = shortlog -sn
+        ci      = commit
+        amend   = ci --amend
+        fa      = fetch --all
+        lipush  = !git review dcommit && git submit --async
+        rb      = review create --owners --no-prompt
+        rbu     = review update
+        pr      = !sh -c 'git fetch upstream pulls/$1/head && git checkout -b gh-$1 FETCH_HEAD'
+        push-pr = push origin -o merge_request.create
+        pushf   = push --force-with-lease
+        mr      = push -o merge_request.create -o merge_request.remove_source_branch
+        update  = !sh -c 'git stash && git pull upstream master && git stash pop'
+        nb      = "!f() { git checkout -b ${1} ${2:-upstream/master}; }; f"
+        new     = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+        ds        = diff --staged
+        di        = diff
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+        l = ! git lg -n25
+        log-me    = !UN=$(git config user.name)&& git log --author="\"$UN\"" --pretty=format:'%h %cd %s' --date=short
+        log-nice  = log --graph --decorate --pretty=oneline --abbrev-commit
+        br = branch
+        s       = status
+
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        excludesfile = ~/.gitignore
+        editor = mg
+[apply]
+        whitespace = nowarn
+[mergetool]
+        keepBackup = false
+[difftool]
+        prompt = false
+[help]
+        autocorrect = 1
+[push]
+        # See `git help config` (search for push.default)
+        # for more information on different options of the below setting.
+        #
+        # Setting to git 2.0 default to surpress warning message
+        default = simple
+[pull]
+        rebase = true
+[receive]
+        fsckObjects = true
+[gpg]
+        program = gpg
+[gitlab]
+    user = maxking
+[github]
+    user = maxking
+[forge]
+    remote = upstream
+[merge]
+    conflictStyle = diff3
+[rebase]
+    autoStash = true
